@@ -163,9 +163,63 @@
             color: #4CAF50;
         }
 
-        .status-development {
-            background: rgba(255, 152, 0, 0.2);
-            color: #FF9800;
+        .social-section {
+            margin: 40px 0;
+        }
+
+        .social-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #ff4757;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .social-link {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            text-decoration: none;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #ff4757;
+            transform: translateY(-2px);
+        }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 16px;
+            color: white;
+        }
+
+        .instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+        .threads { background: #000; }
+        .portfolio { background: #ff4757; }
+        .whatsapp { background: #25d366; }
+
+        .social-text {
+            font-size: 12px;
+            font-weight: 500;
         }
 
         .support-section {
@@ -232,27 +286,47 @@
                 </div>
                 <span class="bot-status status-available">Доступен</span>
             </div>
+        </div>
 
-            <div class="bot-card" onclick="showDevelopmentMessage('Бот 2')">
-                <div class="bot-header">
-                    <div class="bot-icon">🤖</div>
-                    <div class="bot-title">Бот 2</div>
+        <div class="social-section">
+            <h3 class="social-title">Связаться со мной</h3>
+            <div class="social-links">
+                <div class="social-link" onclick="openLink('https://www.instagram.com/vlad_is_luck?igsh=bmY4eWowa3RvbnY5')">
+                    <div class="social-icon instagram">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </div>
+                    <div class="social-text">Instagram</div>
                 </div>
-                <div class="bot-description">
-                    Управление командой, KPI, системы мотивации
+                
+                <div class="social-link" onclick="openLink('https://www.threads.com/@vlad_is_luck?modal=true&xmt=AQF0n7szV_H3FfNP7Ma5_JS2YVVt7AYewHIS_Fj5pXubhKg&glyph_type=other_profile')">
+                    <div class="social-icon threads">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.086 1.5 8.591 2.35 5.738 3.995 3.686 5.849 1.379 8.6.199 12.181.175h.014c3.581.024 6.334 1.205 8.184 3.509C21.65 5.738 22.5 8.591 22.5 12.086c0 3.496-.85 6.349-2.495 8.401C18.151 22.794 15.4 23.976 11.819 24h.367zM12.186 2.175h-.007c-2.826.018-4.832.841-6.122 2.516C4.744 6.293 4 8.599 4 12.086c0 3.487.744 5.793 2.057 7.405 1.29 1.675 3.296 2.498 6.122 2.516h.014c2.826-.018 4.832-.841 6.122-2.516C19.628 17.879 20 15.573 20 12.086c0-3.487-.372-5.793-1.685-7.405C17.025 3.016 15.019 2.193 12.193 2.175h-.007z"/>
+                            <path d="M13.506 13.506a3.502 3.502 0 1 1-7.004 0 3.502 3.502 0 0 1 7.004 0z"/>
+                        </svg>
+                    </div>
+                    <div class="social-text">Threads</div>
                 </div>
-                <span class="bot-status status-development">В разработке</span>
-            </div>
-
-            <div class="bot-card" onclick="showDevelopmentMessage('Бот 3')">
-                <div class="bot-header">
-                    <div class="bot-icon">🤖</div>
-                    <div class="bot-title">Бот 3</div>
+                
+                <div class="social-link" onclick="openLink('https://vladislavborodin.notion.site/14eb2deb9921807e9e8ac2f0776ee0db')">
+                    <div class="social-icon portfolio">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                        </svg>
+                    </div>
+                    <div class="social-text">Портфолио</div>
                 </div>
-                <div class="bot-description">
-                    Контент-планы, аналитика, воронки продаж
+                
+                <div class="social-link" onclick="openWhatsApp()">
+                    <div class="social-icon whatsapp">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.56-.01-.188 0-.49.07-.747.35-.257.28-.982.96-.982 2.341s1.005 2.716 1.145 2.902c.139.186 1.97 3.005 4.77 4.215.667.285 1.188.456 1.594.583.67.213 1.281.182 1.763.111.538-.08 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.064 3.488"/>
+                        </svg>
+                    </div>
+                    <div class="social-text">WhatsApp</div>
                 </div>
-                <span class="bot-status status-development">В разработке</span>
             </div>
         </div>
 
@@ -281,8 +355,12 @@
             tg.openTelegramLink('https://t.me/tarapeyeva');
         }
 
-        function showDevelopmentMessage(botName) {
-            tg.showAlert(botName + ' пока в разработке');
+        function openLink(url) {
+            tg.openLink(url);
+        }
+
+        function openWhatsApp() {
+            tg.openLink('https://wa.me/87051113701');
         }
 
         // Настройка темы под Telegram
