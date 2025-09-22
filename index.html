@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Система ОП</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
         * {
             margin: 0;
@@ -37,29 +38,41 @@
             position: relative;
         }
 
-        .logo .dot {
-            position: absolute;
+        .logo-circle {
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
-            background: #E53E3E;
+            position: relative;
+            overflow: hidden;
         }
 
-        .logo .dot:nth-child(1) { top: 2px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; }
-        .logo .dot:nth-child(2) { top: 3px; right: 20px; width: 7.5px; height: 7.5px; }
-        .logo .dot:nth-child(3) { top: 7px; right: 12px; width: 7px; height: 7px; }
-        .logo .dot:nth-child(4) { top: 14px; right: 6px; width: 6.5px; height: 6.5px; }
-        .logo .dot:nth-child(5) { top: 24px; right: 2px; width: 6px; height: 6px; }
-        .logo .dot:nth-child(6) { top: 36px; right: 1px; width: 5.5px; height: 5.5px; }
-        .logo .dot:nth-child(7) { bottom: 24px; right: 2px; width: 5px; height: 5px; }
-        .logo .dot:nth-child(8) { bottom: 14px; right: 6px; width: 4.5px; height: 4.5px; }
-        .logo .dot:nth-child(9) { bottom: 7px; right: 12px; width: 4px; height: 4px; }
-        .logo .dot:nth-child(10) { bottom: 3px; right: 20px; width: 4px; height: 4px; }
-        .logo .dot:nth-child(11) { bottom: 2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; }
-        .logo .dot:nth-child(12) { bottom: 3px; left: 20px; width: 3.5px; height: 3.5px; }
-        .logo .dot:nth-child(13) { bottom: 7px; left: 12px; width: 3.5px; height: 3.5px; }
-        .logo .dot:nth-child(14) { bottom: 14px; left: 6px; width: 3px; height: 3px; }
-        .logo .dot:nth-child(15) { bottom: 24px; left: 2px; width: 3px; height: 3px; }
-        .logo .dot:nth-child(16) { top: 36px; left: 1px; width: 2.5px; height: 2.5px; }
-        .logo .dot:nth-child(17) { top: 24px; left: 2px; width: 2.5px; height: 2.5px; }
+        .dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #ffffff;
+        }
+
+        .dot.red {
+            background: rgb(249, 46, 62);
+        }
+
+        /* Positioning dots in a circle */
+        .dot:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+        .dot:nth-child(2) { top: 15%; right: 15%; }
+        .dot:nth-child(3) { top: 50%; right: 0; transform: translateY(-50%); }
+        .dot:nth-child(4) { bottom: 15%; right: 15%; }
+        .dot:nth-child(5) { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .dot:nth-child(6) { bottom: 15%; left: 15%; }
+        .dot:nth-child(7) { top: 50%; left: 0; transform: translateY(-50%); }
+        .dot:nth-child(8) { top: 15%; left: 15%; }
 
         .title {
             font-size: 32px;
@@ -69,13 +82,13 @@
         }
 
         .title .red {
-            color: #E53E3E;
+            color: rgb(249, 46, 62);
         }
 
         .subtitle {
             font-size: 16px;
             opacity: 0.8;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
         }
 
         .bots-section {
@@ -95,12 +108,12 @@
 
         .bot-card:hover {
             background: rgba(255, 255, 255, 0.15);
-            border-color: #E53E3E;
+            border-color: rgb(249, 46, 62);
         }
 
         .bot-card.available {
-            border-color: #E53E3E;
-            background: rgba(229, 62, 62, 0.1);
+            border-color: rgb(249, 46, 62);
+            background: rgba(249, 46, 62, 0.1);
         }
 
         .bot-header {
@@ -112,7 +125,7 @@
         .bot-icon {
             width: 40px;
             height: 40px;
-            background: #E53E3E;
+            background: rgb(249, 46, 62);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -158,7 +171,7 @@
 
         .social-link:hover {
             background: rgba(255, 255, 255, 0.15);
-            border-color: #E53E3E;
+            border-color: rgb(249, 46, 62);
             transform: translateY(-2px);
         }
 
@@ -176,7 +189,7 @@
 
         .instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
         .threads { background: #000; }
-        .portfolio { background: #E53E3E; }
+        .portfolio { background: rgb(249, 46, 62); }
         .whatsapp { background: #25d366; }
 
         .social-text {
@@ -190,7 +203,7 @@
         }
 
         .support-button {
-            background: #E53E3E;
+            background: rgb(249, 46, 62);
             color: white;
             border: none;
             border-radius: 16px;
@@ -203,7 +216,7 @@
         }
 
         .support-button:hover {
-            background: #e63946;
+            background: rgb(229, 26, 42);
             transform: translateY(-2px);
         }
     </style>
@@ -212,10 +225,20 @@
     <div class="container">
         <div class="header">
             <div class="logo">
-                <img src="logo.jpg" alt="Логотип Система ОП">
+                <div class="logo-circle">
+                    <div class="dots">
+                        <div class="dot"></div>
+                        <div class="dot red"></div>
+                        <div class="dot red"></div>
+                        <div class="dot red"></div>
+                        <div class="dot red"></div>
+                        <div class="dot red"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
             </div>
             <h1 class="title">СИСТЕМА <span class="red">ОП</span></h1>
-            <p class="subtitle">200 инструментов</p>
         </div>
 
         <div class="bots-section">
@@ -243,8 +266,8 @@
                 
                 <div class="social-link" onclick="openLink('https://www.threads.com/@vlad_is_luck?modal=true&xmt=AQF0n7szV_H3FfNP7Ma5_JS2YVVt7AYewHIS_Fj5pXubhKg&glyph_type=other_profile')">
                     <div class="social-icon threads">
-                        <svg width="16" height="16" viewBox="0 0 192 192" fill="currentColor">
-                            <path d="M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.5619 44.745C97.4484 44.7443 97.3355 44.7443 97.222 44.7443C82.2364 44.7443 69.7731 51.1409 62.102 62.7807L75.881 72.2328C81.6116 63.5383 90.6052 61.6848 97.35 61.6848C97.3783 61.6848 97.4067 61.6848 97.435 61.6848C110.136 61.7394 117.204 69.7442 118.078 85.8849C108.62 82.8425 98.1858 82.69 87.9921 85.9928C74.2688 90.1903 67.669 99.9535 69.8078 112.168C71.933 124.322 82.618 130.745 96.8542 130.745C108.856 130.745 119.064 123.7 123.018 113.097C129.212 118.201 132.949 125.716 132.949 134.654C132.949 151.9 118.131 161.718 97.0541 161.718C68.5891 161.718 63.0687 143.148 62.681 134.654C62.681 134.636 62.681 134.618 62.681 134.6V134.654L48.6031 134.654C48.6031 157.852 65.7607 177.406 97.0541 177.406C127.342 177.406 148.637 161.054 148.637 134.654C148.637 119.688 141.537 107.334 125.856 99.9446C129.699 97.1069 132.227 93.2654 132.732 88.8204C139.370 81.8318 142.206 72.4765 141.537 62.5409C140.725 50.6136 134.11 39.2328 123.56 31.834C118.24 28.0886 112.18 25.6022 105.684 24.5332C99.8611 23.5716 93.7557 23.5716 87.9328 24.5332C81.8274 25.5159 76.1206 27.6538 71.1776 30.825C66.2346 34.0108 62.1776 38.1632 59.2776 42.9948C56.3776 47.8263 54.7034 53.2132 54.3776 58.7548C54.2008 62.1132 54.5776 65.4716 55.4776 68.7132C56.3776 71.9548 57.8034 75.0048 59.6776 77.7132C61.5776 80.4216 64.0008 82.7132 66.8008 84.4716C69.6008 86.2548 72.7034 87.4716 75.9776 88.0548C76.3019 88.1274 76.627 88.1932 76.9529 88.2521C77.7881 94.0718 81.0558 99.0718 85.8776 102.054C90.2364 106.83 96.3776 109.327 102.722 109.014C109.067 108.701 114.936 105.604 118.78 100.5C118.78 100.5 118.847 117.676 97.1776 117.676C87.4776 117.676 85.4034 111.054 85.4034 108.622C85.4034 103.676 88.8776 100.676 93.4034 100.676C96.0558 100.676 97.9776 102.03 98.7776 104.054L108.155 100.676C106.633 95.2892 101.633 91.3459 95.1776 91.3459C82.2364 91.3459 70.7776 100.054 70.7776 112.676C70.7776 125.3 82.2364 133.3 97.1776 133.3C125.845 133.3 134.411 110.054 134.411 96.676C134.411 84.054 128.078 75.676 119.411 70.676C117.845 69.4048 116.078 68.3459 114.155 67.5292C113.489 67.2632 112.811 67.0216 112.122 66.8048C111.433 66.5879 110.733 66.3959 110.022 66.2291C109.311 66.0623 108.589 65.9206 107.856 65.8048C107.122 65.689 106.378 65.5991 105.622 65.5352C104.867 65.4714 104.1 65.4335 103.322 65.4216C102.544 65.4097 101.756 65.4239 100.956 65.4641C100.156 65.5042 99.3447 65.5704 98.522 65.6627C97.6993 65.755 96.8661 65.8735 96.0223 66.0181C95.1785 66.1627 94.3242 66.3335 93.4593 66.5304C92.5944 66.7273 91.7189 66.9503 90.8328 67.1994C89.9467 67.4485 89.05 67.7236 88.1427 68.0248C87.2354 68.326 86.3175 68.6532 85.3889 69.0065C84.4603 69.3598 83.521 69.7392 82.5711 70.1447C81.6212 70.5502 80.6606 70.9817 79.6894 71.4393C78.7182 71.8969 77.7364 72.3805 76.7439 72.8901C75.7514 73.3997 74.7483 73.9353 73.7345 74.4969C72.7207 75.0585 71.6963 75.6461 70.6611 76.2598C69.6259 76.8735 68.5801 77.5132 67.5236 78.1789C66.4671 78.8446 65.3999 79.5364 64.3219 80.2542C63.2439 80.9721 62.1552 81.7159 61.0558 82.4858C59.9564 83.2557 58.8463 84.0516 57.7254 84.8736C56.6045 85.6956 55.4728 86.5436 54.3303 87.4176C53.1878 88.2916 52.0345 89.1917 50.8704 90.1178C49.7063 91.0439 48.5314 91.996 47.3457 92.9742C46.16 93.9524 44.9635 94.9566 43.7561 95.9869C42.5487 97.0172 41.3305 98.0735 40.1015 99.1558C38.8725 100.238 37.6327 101.347 36.3821 102.481C35.1315 103.615 33.8701 104.775 32.5978 105.96C31.3255 107.145 30.0424 108.356 28.7485 109.593C27.4546 110.83 26.1499 112.092 24.8343 113.38C23.5187 114.668 22.1923 115.982 20.855 117.321C19.5177 118.66 18.1696 120.025 16.8106 121.415C15.4516 122.805 14.0817 124.22 12.701 125.661C11.3203 127.102 9.92871 128.568 8.52626 130.059C7.12381 131.55 5.71051 133.067 4.28634 134.608C2.86218 136.149 1.42716 137.716 0 139.308V192H141.537V88.9883Z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Threads" viewBox="0 0 192 192" width="16" height="16" fill="currentColor">
+                            <path d="M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.5619 44.745C97.4484 44.7443 97.3355 44.7443 97.222 44.7443C82.2364 44.7443 69.7731 51.1409 62.102 62.7807L75.881 72.2328C81.6116 63.5383 90.6052 61.6848 97.2286 61.6848C97.3051 61.6848 97.3819 61.6848 97.4576 61.6855C105.707 61.7381 111.932 64.1366 115.961 68.814C118.893 72.2193 120.854 76.925 121.825 82.8638C114.511 81.6207 106.601 81.2385 98.145 81.7233C74.3247 83.0954 59.0111 96.9879 60.0396 116.292C60.5615 126.084 65.4397 134.508 73.775 140.011C80.8224 144.663 89.899 146.938 99.3323 146.423C111.79 145.74 121.563 140.987 128.381 132.296C133.559 125.696 136.834 117.143 138.28 106.366C144.217 109.949 148.617 114.664 151.047 120.332C155.179 129.967 155.42 145.8 142.501 158.708C131.182 170.016 117.576 174.908 97.0135 175.059C74.2042 174.89 56.9538 167.575 45.7381 153.317C35.2355 139.966 29.8077 120.682 29.6052 96C29.8077 71.3178 35.2355 52.0336 45.7381 38.6827C56.9538 24.4249 74.2039 17.11 97.0132 16.9405C119.988 17.1113 137.539 24.4614 149.184 38.788C154.894 45.8136 159.199 54.6488 162.037 64.9503L178.184 60.6422C174.744 47.9622 169.331 37.0357 161.965 27.974C147.036 9.60668 125.202 0.195148 97.0695 0H96.9569C68.8816 0.19447 47.2921 9.6418 32.7883 28.0793C19.8819 44.4864 13.2244 67.3157 13.0007 95.9325L13 96L13.0007 96.0675C13.2244 124.684 19.8819 147.514 32.7883 163.921C47.2921 182.358 68.8816 191.806 96.9569 192H97.0695C122.03 191.827 139.624 185.292 154.118 170.811C173.081 151.866 172.51 128.119 166.26 113.541C161.776 103.087 153.227 94.5962 141.537 88.9883ZM98.4405 129.507C88.0005 130.095 77.1544 125.409 76.6196 115.372C76.2232 107.93 81.9158 99.626 99.0812 98.6368C101.047 98.5234 102.976 98.468 104.871 98.468C111.106 98.468 116.939 99.0737 122.242 100.233C120.264 124.935 108.662 128.946 98.4405 129.507Z"/>
                         </svg>
                     </div>
                     <div class="social-text">Threads</div>
@@ -300,7 +323,7 @@
 
         // Настройка темы под Telegram
         if (tg.colorScheme === 'dark') {
-            document.body.style.background = tg.themeParams.bg_color || '#1a3a52';
+            document.body.style.background = tg.themeParams.bg_color || 'rgb(0, 43, 68)';
         }
     </script>
 </body>
