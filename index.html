@@ -13,7 +13,7 @@
         }
 
         body {
-            background: #1a3a52;
+            background: rgb(0, 43, 68);
             color: #ffffff;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             min-height: 100vh;
@@ -37,41 +37,29 @@
             position: relative;
         }
 
-        .logo-circle {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .dots {
+        .logo .dot {
             position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .dot {
-            position: absolute;
-            width: 6px;
-            height: 6px;
             border-radius: 50%;
-            background: #ffffff;
+            background: #E53E3E;
         }
 
-        .dot.red {
-            background: #ff4757;
-        }
-
-        /* Positioning dots in a circle */
-        .dot:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
-        .dot:nth-child(2) { top: 15%; right: 15%; }
-        .dot:nth-child(3) { top: 50%; right: 0; transform: translateY(-50%); }
-        .dot:nth-child(4) { bottom: 15%; right: 15%; }
-        .dot:nth-child(5) { bottom: 0; left: 50%; transform: translateX(-50%); }
-        .dot:nth-child(6) { bottom: 15%; left: 15%; }
-        .dot:nth-child(7) { top: 50%; left: 0; transform: translateY(-50%); }
-        .dot:nth-child(8) { top: 15%; left: 15%; }
+        .logo .dot:nth-child(1) { top: 2px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; }
+        .logo .dot:nth-child(2) { top: 3px; right: 20px; width: 7.5px; height: 7.5px; }
+        .logo .dot:nth-child(3) { top: 7px; right: 12px; width: 7px; height: 7px; }
+        .logo .dot:nth-child(4) { top: 14px; right: 6px; width: 6.5px; height: 6.5px; }
+        .logo .dot:nth-child(5) { top: 24px; right: 2px; width: 6px; height: 6px; }
+        .logo .dot:nth-child(6) { top: 36px; right: 1px; width: 5.5px; height: 5.5px; }
+        .logo .dot:nth-child(7) { bottom: 24px; right: 2px; width: 5px; height: 5px; }
+        .logo .dot:nth-child(8) { bottom: 14px; right: 6px; width: 4.5px; height: 4.5px; }
+        .logo .dot:nth-child(9) { bottom: 7px; right: 12px; width: 4px; height: 4px; }
+        .logo .dot:nth-child(10) { bottom: 3px; right: 20px; width: 4px; height: 4px; }
+        .logo .dot:nth-child(11) { bottom: 2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; }
+        .logo .dot:nth-child(12) { bottom: 3px; left: 20px; width: 3.5px; height: 3.5px; }
+        .logo .dot:nth-child(13) { bottom: 7px; left: 12px; width: 3.5px; height: 3.5px; }
+        .logo .dot:nth-child(14) { bottom: 14px; left: 6px; width: 3px; height: 3px; }
+        .logo .dot:nth-child(15) { bottom: 24px; left: 2px; width: 3px; height: 3px; }
+        .logo .dot:nth-child(16) { top: 36px; left: 1px; width: 2.5px; height: 2.5px; }
+        .logo .dot:nth-child(17) { top: 24px; left: 2px; width: 2.5px; height: 2.5px; }
 
         .title {
             font-size: 32px;
@@ -81,19 +69,13 @@
         }
 
         .title .red {
-            color: #ff4757;
+            color: #E53E3E;
         }
 
         .subtitle {
             font-size: 16px;
             opacity: 0.8;
-            margin-bottom: 10px;
-        }
-
-        .description {
-            font-size: 14px;
-            opacity: 0.7;
-            line-height: 1.4;
+            margin-bottom: 40px;
         }
 
         .bots-section {
@@ -113,12 +95,12 @@
 
         .bot-card:hover {
             background: rgba(255, 255, 255, 0.15);
-            border-color: #ff4757;
+            border-color: #E53E3E;
         }
 
         .bot-card.available {
-            border-color: #ff4757;
-            background: rgba(255, 71, 87, 0.1);
+            border-color: #E53E3E;
+            background: rgba(229, 62, 62, 0.1);
         }
 
         .bot-header {
@@ -130,7 +112,7 @@
         .bot-icon {
             width: 40px;
             height: 40px;
-            background: #ff4757;
+            background: #E53E3E;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -151,28 +133,8 @@
             margin-bottom: 8px;
         }
 
-        .bot-status {
-            font-size: 12px;
-            padding: 4px 8px;
-            border-radius: 12px;
-            display: inline-block;
-        }
-
-        .status-available {
-            background: rgba(76, 175, 80, 0.2);
-            color: #4CAF50;
-        }
-
         .social-section {
             margin: 40px 0;
-        }
-
-        .social-title {
-            text-align: center;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #ff4757;
         }
 
         .social-links {
@@ -196,7 +158,7 @@
 
         .social-link:hover {
             background: rgba(255, 255, 255, 0.15);
-            border-color: #ff4757;
+            border-color: #E53E3E;
             transform: translateY(-2px);
         }
 
@@ -214,7 +176,7 @@
 
         .instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
         .threads { background: #000; }
-        .portfolio { background: #ff4757; }
+        .portfolio { background: #E53E3E; }
         .whatsapp { background: #25d366; }
 
         .social-text {
@@ -228,7 +190,7 @@
         }
 
         .support-button {
-            background: #ff4757;
+            background: #E53E3E;
             color: white;
             border: none;
             border-radius: 16px;
@@ -244,52 +206,31 @@
             background: #e63946;
             transform: translateY(-2px);
         }
-
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            opacity: 0.6;
-            font-size: 12px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <div class="logo">
-                <div class="logo-circle">
-                    <div class="dots">
-                        <div class="dot"></div>
-                        <div class="dot red"></div>
-                        <div class="dot red"></div>
-                        <div class="dot red"></div>
-                        <div class="dot red"></div>
-                        <div class="dot red"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-                </div>
+                <img src="logo.jpg" alt="Логотип Система ОП">
             </div>
             <h1 class="title">СИСТЕМА <span class="red">ОП</span></h1>
             <p class="subtitle">200 инструментов</p>
-            <p class="description">Персональные ИИ-помощники для роста вашего бизнеса</p>
         </div>
 
         <div class="bots-section">
             <div class="bot-card available" onclick="openBot('https://t.me/PodskazkiOP_bot')">
                 <div class="bot-header">
                     <div class="bot-icon">📊</div>
-                    <div class="bot-title">Бот с подсказками для ОП</div>
+                    <div class="bot-title">Бот-помощник для РОП-ов</div>
                 </div>
                 <div class="bot-description">
-                    Скрипты, техники закрытия, работа с возражениями
+                    +1 задача ежедневно для роста выручки в отделе продаж
                 </div>
-                <span class="bot-status status-available">Доступен</span>
             </div>
         </div>
 
         <div class="social-section">
-            <h3 class="social-title">Связаться со мной</h3>
             <div class="social-links">
                 <div class="social-link" onclick="openLink('https://www.instagram.com/vlad_is_luck?igsh=bmY4eWowa3RvbnY5')">
                     <div class="social-icon instagram">
@@ -302,9 +243,8 @@
                 
                 <div class="social-link" onclick="openLink('https://www.threads.com/@vlad_is_luck?modal=true&xmt=AQF0n7szV_H3FfNP7Ma5_JS2YVVt7AYewHIS_Fj5pXubhKg&glyph_type=other_profile')">
                     <div class="social-icon threads">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.086 1.5 8.591 2.35 5.738 3.995 3.686 5.849 1.379 8.6.199 12.181.175h.014c3.581.024 6.334 1.205 8.184 3.509C21.65 5.738 22.5 8.591 22.5 12.086c0 3.496-.85 6.349-2.495 8.401C18.151 22.794 15.4 23.976 11.819 24h.367zM12.186 2.175h-.007c-2.826.018-4.832.841-6.122 2.516C4.744 6.293 4 8.599 4 12.086c0 3.487.744 5.793 2.057 7.405 1.29 1.675 3.296 2.498 6.122 2.516h.014c2.826-.018 4.832-.841 6.122-2.516C19.628 17.879 20 15.573 20 12.086c0-3.487-.372-5.793-1.685-7.405C17.025 3.016 15.019 2.193 12.193 2.175h-.007z"/>
-                            <path d="M13.506 13.506a3.502 3.502 0 1 1-7.004 0 3.502 3.502 0 0 1 7.004 0z"/>
+                        <svg width="16" height="16" viewBox="0 0 192 192" fill="currentColor">
+                            <path d="M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.5619 44.745C97.4484 44.7443 97.3355 44.7443 97.222 44.7443C82.2364 44.7443 69.7731 51.1409 62.102 62.7807L75.881 72.2328C81.6116 63.5383 90.6052 61.6848 97.35 61.6848C97.3783 61.6848 97.4067 61.6848 97.435 61.6848C110.136 61.7394 117.204 69.7442 118.078 85.8849C108.62 82.8425 98.1858 82.69 87.9921 85.9928C74.2688 90.1903 67.669 99.9535 69.8078 112.168C71.933 124.322 82.618 130.745 96.8542 130.745C108.856 130.745 119.064 123.7 123.018 113.097C129.212 118.201 132.949 125.716 132.949 134.654C132.949 151.9 118.131 161.718 97.0541 161.718C68.5891 161.718 63.0687 143.148 62.681 134.654C62.681 134.636 62.681 134.618 62.681 134.6V134.654L48.6031 134.654C48.6031 157.852 65.7607 177.406 97.0541 177.406C127.342 177.406 148.637 161.054 148.637 134.654C148.637 119.688 141.537 107.334 125.856 99.9446C129.699 97.1069 132.227 93.2654 132.732 88.8204C139.370 81.8318 142.206 72.4765 141.537 62.5409C140.725 50.6136 134.11 39.2328 123.56 31.834C118.24 28.0886 112.18 25.6022 105.684 24.5332C99.8611 23.5716 93.7557 23.5716 87.9328 24.5332C81.8274 25.5159 76.1206 27.6538 71.1776 30.825C66.2346 34.0108 62.1776 38.1632 59.2776 42.9948C56.3776 47.8263 54.7034 53.2132 54.3776 58.7548C54.2008 62.1132 54.5776 65.4716 55.4776 68.7132C56.3776 71.9548 57.8034 75.0048 59.6776 77.7132C61.5776 80.4216 64.0008 82.7132 66.8008 84.4716C69.6008 86.2548 72.7034 87.4716 75.9776 88.0548C76.3019 88.1274 76.627 88.1932 76.9529 88.2521C77.7881 94.0718 81.0558 99.0718 85.8776 102.054C90.2364 106.83 96.3776 109.327 102.722 109.014C109.067 108.701 114.936 105.604 118.78 100.5C118.78 100.5 118.847 117.676 97.1776 117.676C87.4776 117.676 85.4034 111.054 85.4034 108.622C85.4034 103.676 88.8776 100.676 93.4034 100.676C96.0558 100.676 97.9776 102.03 98.7776 104.054L108.155 100.676C106.633 95.2892 101.633 91.3459 95.1776 91.3459C82.2364 91.3459 70.7776 100.054 70.7776 112.676C70.7776 125.3 82.2364 133.3 97.1776 133.3C125.845 133.3 134.411 110.054 134.411 96.676C134.411 84.054 128.078 75.676 119.411 70.676C117.845 69.4048 116.078 68.3459 114.155 67.5292C113.489 67.2632 112.811 67.0216 112.122 66.8048C111.433 66.5879 110.733 66.3959 110.022 66.2291C109.311 66.0623 108.589 65.9206 107.856 65.8048C107.122 65.689 106.378 65.5991 105.622 65.5352C104.867 65.4714 104.1 65.4335 103.322 65.4216C102.544 65.4097 101.756 65.4239 100.956 65.4641C100.156 65.5042 99.3447 65.5704 98.522 65.6627C97.6993 65.755 96.8661 65.8735 96.0223 66.0181C95.1785 66.1627 94.3242 66.3335 93.4593 66.5304C92.5944 66.7273 91.7189 66.9503 90.8328 67.1994C89.9467 67.4485 89.05 67.7236 88.1427 68.0248C87.2354 68.326 86.3175 68.6532 85.3889 69.0065C84.4603 69.3598 83.521 69.7392 82.5711 70.1447C81.6212 70.5502 80.6606 70.9817 79.6894 71.4393C78.7182 71.8969 77.7364 72.3805 76.7439 72.8901C75.7514 73.3997 74.7483 73.9353 73.7345 74.4969C72.7207 75.0585 71.6963 75.6461 70.6611 76.2598C69.6259 76.8735 68.5801 77.5132 67.5236 78.1789C66.4671 78.8446 65.3999 79.5364 64.3219 80.2542C63.2439 80.9721 62.1552 81.7159 61.0558 82.4858C59.9564 83.2557 58.8463 84.0516 57.7254 84.8736C56.6045 85.6956 55.4728 86.5436 54.3303 87.4176C53.1878 88.2916 52.0345 89.1917 50.8704 90.1178C49.7063 91.0439 48.5314 91.996 47.3457 92.9742C46.16 93.9524 44.9635 94.9566 43.7561 95.9869C42.5487 97.0172 41.3305 98.0735 40.1015 99.1558C38.8725 100.238 37.6327 101.347 36.3821 102.481C35.1315 103.615 33.8701 104.775 32.5978 105.96C31.3255 107.145 30.0424 108.356 28.7485 109.593C27.4546 110.83 26.1499 112.092 24.8343 113.38C23.5187 114.668 22.1923 115.982 20.855 117.321C19.5177 118.66 18.1696 120.025 16.8106 121.415C15.4516 122.805 14.0817 124.22 12.701 125.661C11.3203 127.102 9.92871 128.568 8.52626 130.059C7.12381 131.55 5.71051 133.067 4.28634 134.608C2.86218 136.149 1.42716 137.716 0 139.308V192H141.537V88.9883Z"/>
                         </svg>
                     </div>
                     <div class="social-text">Threads</div>
@@ -332,13 +272,8 @@
 
         <div class="support-section">
             <button class="support-button" onclick="openSupport()">
-                💬 ПОДДЕРЖКА
+                💬 СЛУЖБА ПОДДЕРЖКИ
             </button>
-        </div>
-
-        <div class="footer">
-            <p>🎁 Бесплатно: 1 подсказка в день</p>
-            <p>💎 Премиум: 3 подсказки + эксклюзив</p>
         </div>
     </div>
 
